@@ -59,10 +59,6 @@ var basePlugin = [
         // 如何处理 .css 文件，用法和 Loader 配置中一样
         loaders: [{
             loader: 'css-loader',
-            options: {
-                // 转化类名时的规则
-                localIdentName: '[path]__[name]__[local]__[hash:base64:5]',
-            }
         }],
         threadPool: happyThreadPool,
     }),

@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { WelcomePage } from '../src/layout/WelcomePage';
 import { FreePage } from '../src/layout/FreePage';
+import 'antd/dist/antd.css';
 
 
 render(

@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './style.scss';
 
-export class TwoPage extends React.Component {
+export class SystemMemu extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -13,7 +13,7 @@ export class TwoPage extends React.Component {
         return (
             <div className={styles.TwoPage}>
                 <p className={styles.title}>yahahah~~</p>
-                <p className={styles.content}>第二个页面哦</p>
+                <p className={styles.content}>系统菜单配置</p>
             </div>
         )
     }

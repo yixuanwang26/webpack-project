@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './style.scss';
 
-export class OnePage extends React.Component {
+export class OperateBorrow extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -11,9 +11,9 @@ export class OnePage extends React.Component {
     }
     render() {
         return (
-            <div className={styles.OnePage}>
+            <div className={styles.TwoPage}>
                 <p className={styles.title}>yahahah~~</p>
-                <p className={styles.content}>第一个页面哦</p>
+                <p className={styles.content}>借书界面</p>
             </div>
         )
     }
