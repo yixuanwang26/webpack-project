@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "babel": {
     "presets": [
-      "react"
+      "es2015",
+      "react",
+      "stage-2"
     ],
     "plugins": [
       [
@@ -33,7 +35,9 @@
     "antd": "^3.4.3",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
-    "react-router-dom": "^4.2.2"
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.1.1",
+    "redux": "^4.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -47,6 +51,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "happypack": "^4.0.1",
     "node-sass": "^4.8.3",
+    "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
     "uglifyjs-webpack-plugin": "^1.0.0-rc.0",

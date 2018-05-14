@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './WelcomePage.scss';
 import { Link, Switch, Route } from 'react-router-dom';
-import { BookSearch } from '../routes/Book/Search';
+import BookSearch from '../routes/Book/Search';
 import { DashBoard } from '../routes/DashBoard';
 import { OperateBorrow } from '../routes/Operate/Borrow';
 import { OperateReturn } from '../routes/Operate/Return';
@@ -25,7 +25,10 @@ export class WelcomePage extends React.Component {
         this.toggle = this.toggle.bind(this);
     }
     componentDidMount() {
-
+        const { location: { pathname }, history } = this.props;
+        if(pathname === '/'){
+            history.push('/dash-board');
+        }
     }
 
     toggle() {
@@ -33,6 +36,7 @@ export class WelcomePage extends React.Component {
             collapsed: !this.state.collapsed,
         });
     }
+
     render() {
         return (
             <Layout>
@@ -45,11 +49,11 @@ export class WelcomePage extends React.Component {
                         <Menu
                             theme="dark"
                             mode="inline"
-                            defaultSelectedKeys={['1']}
-                            defaultOpenKeys={['sub1']}
+                           // defaultSelectedKeys={['1']}
+                            // defaultOpenKeys={['sub1']}
                             style={{ height: '100%', borderRight: 0 }}
                         >
-                            <Menu.Item key="index"><span><Icon type="laptop" /><Link to='/'>首页</Link></span></Menu.Item>
+                            <Menu.Item key="index"><span><Icon type="laptop" /><Link to='/dash-board'>首页</Link></span></Menu.Item>
                             <SubMenu key="bookOp" title={<span><Icon type="user" />书籍操作</span>}>
                                 <Menu.Item key="borrow"><Link to='/operate-borrow'>借书</Link></Menu.Item>
                                 <Menu.Item key="return"><Link to='/operate-return'>还书</Link>还书</Menu.Item>
@@ -65,15 +69,15 @@ export class WelcomePage extends React.Component {
                             </SubMenu>
                         </Menu>
                     </Sider>
-                    <Layout style={{ padding: '0 24px 24px' }}>
-                        <Breadcrumb style={{ margin: '16px 0' }}>
+                    <Layout style={{ padding: '24px' }}>
+                        {/* <Breadcrumb style={{ margin: '16px 0' }}>
                             <Breadcrumb.Item>Home</Breadcrumb.Item>
                             <Breadcrumb.Item>List</Breadcrumb.Item>
                             <Breadcrumb.Item>App</Breadcrumb.Item>
-                        </Breadcrumb>
+                        </Breadcrumb> */}
                         <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280 }}>
                             <Switch>
-                                <Route exact path='/' component={DashBoard} />
+                                <Route path='/dash-board' component={DashBoard} />
                                 <Route path='/book-search' component={BookSearch} />
                                 <Route path='/operate-borrow' component={OperateBorrow} />
                                 <Route path='/operate-return' component={OperateReturn} />
@@ -86,22 +90,6 @@ export class WelcomePage extends React.Component {
                     </Layout>
                 </Layout>
             </Layout>
-            // <div className={styles.WelcomePage}>
-            //     <div>
-            //         <div className={styles.header}>
-            //             <ul>
-            //                 <li><Link to='/'>OnePage</Link></li>
-            //                 <li><Link to='/two'>TwoPage</Link></li>
-            //             </ul>
-            //         </div>
-            //         <div className={styles.main}>
-            //             <Switch>
-            //                 <Route exact path='/' component={OnePage} />
-            //                 <Route path='/two' component={TwoPage} />
-            //             </Switch>
-            //         </div>
-            //     </div>
-            // </div>
         )
     }
 }
