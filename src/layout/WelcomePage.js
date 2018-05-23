@@ -75,7 +75,7 @@ export class WelcomePage extends React.Component {
                             <Breadcrumb.Item>List</Breadcrumb.Item>
                             <Breadcrumb.Item>App</Breadcrumb.Item>
                         </Breadcrumb> */}
-                        <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280 }}>
+                        <Content style={{ margin: 0, minHeight: 280 }}>
                             <Switch>
                                 <Route path='/dash-board' component={DashBoard} />
                                 <Route path='/book-search' component={BookSearch} />

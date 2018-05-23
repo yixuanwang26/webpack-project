@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import styles from './style.scss';
 import { Table, Button } from 'antd';
 import { connect } from 'react-redux';
-import { QUERY_BOOKS } from './actionTypes';
 import { queryBooks } from './action';
 
 class BookSearch extends React.Component {
@@ -12,7 +11,7 @@ class BookSearch extends React.Component {
         super(props);
     }
     componentDidMount() {
-        this.props.test();
+        this.props.fetchBooks();
     }
 
     getColumns = () => {
@@ -32,7 +31,7 @@ class BookSearch extends React.Component {
     }
 
     addRow = () => {
-        this.props.test();
+       // this.props.test();
     }
 
     render() {
@@ -60,7 +59,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    test: () => dispatch(queryBooks())
+    fetchBooks: () => dispatch(queryBooks())
 })
 
 export default connect(
